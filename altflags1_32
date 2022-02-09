@@ -1,0 +1,23 @@
+export CFLAGS="-m32 -O3 -pipe -fPIC -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
+export FCFLAGS="-m32 -O3 -pipe -fPIC -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
+export FFLAGS="-m32 -O3 -pipe -fPIC -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
+export CXXFLAGS="-m32 -O3 -fvisibility-inlines-hidden -pipe -fPIC -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
+export LDFLAGS="-m32 -O3 -pipe -fPIC -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
+export ASMFLAGS="-m32 -O3 -pipe -fPIC -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
+export ASFLAGS="--32"
+#
+export AR=/usr/bin/gcc-ar
+export RANLIB=/usr/bin/gcc-ranlib
+export NM=/usr/bin/gcc-nm
+export MAKEFLAGS=%{?_smp_mflags}
+#
+%global _lto_cflags %{nil}
+%global _disable_maintainer_mode 1
+#
+export CCACHE_DISABLE=true
+#
+unset LD_LIBRARY_PATH
+unset LIBRARY_PATH
+unset CPATH="/usr/local/cuda/include"
+#
+export PATH="/usr/lib64/ccache/bin:/usr/local/cuda/bin:/usr/local/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/sbin"
